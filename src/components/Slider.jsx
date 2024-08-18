@@ -4,6 +4,7 @@ import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { useState } from "react";
 import { sliderItems } from "../data";
 import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -33,8 +34,7 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
-  transform: translateX(${(props) => props.slideIndex * -100}vw);
-  transition: all 1.5s ease ;
+  transform: translateX(${(props) => props.slideindex * -100}vw);  transition: all 1.5s ease;
 `;
 const Slide = styled.div`
   width: 100vw;
@@ -70,6 +70,9 @@ const Button = styled.button`
   background-color: transparent;
   cursor: pointer;
 `;
+const Href = styled(Link)`
+   
+`;
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const handleClick = (direction) => {
@@ -93,7 +96,9 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
+              <Href to="/Product">
               <Button>SHOW NOW</Button>
+              </Href>
             </InfoContainer>
           </Slide>
         ))}

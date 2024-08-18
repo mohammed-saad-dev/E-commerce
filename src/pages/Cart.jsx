@@ -5,6 +5,7 @@ import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 const Container = styled.div``;
 
 const Wrapper = styled.div`
@@ -111,7 +112,7 @@ const ProductAmount = styled.div`
 const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
-  ${mobile({ marginBottom: "20px" })}
+  ${mobile({ marginBottom: "20px" })} 
 `;
 
 const Hr = styled.hr`
@@ -151,7 +152,9 @@ const Button = styled.button`
   color: white;
   font-weight: 600;
 `;
-
+const Home = styled(Link)`
+  
+`
 const Cart = () => {
   return (
     <Container>
@@ -160,7 +163,9 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
+          <Home to="/">
           <TopButton>CONTINUE SHOPPING</TopButton>
+          </Home>
           <TopTexts>
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist (0)</TopText>
